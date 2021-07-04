@@ -21,6 +21,7 @@ div#close{
     position: fixed;
     top: 80px;
     left: 80px;
+    z-index: 101;
 }
 
 
