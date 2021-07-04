@@ -43,6 +43,15 @@ div#close{
 @media screen and (max-width: 800px) {
     #prev, #next {
       opacity: 0%;
+      height: 100vh;
+      width: 30vw;
+      top: 0px
+    }
+    #prev{
+        left: 0px;
+    }
+    #next{
+        right: 0px;
     }
   }
 
