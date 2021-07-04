@@ -11,8 +11,6 @@
 #lb-overlay img {
     max-width: 90%;
     max-height: 90%;
-    /* margin: auto;
-    margin-top: 20%; */
 }
 
 div#close{
@@ -46,7 +44,8 @@ div#close{
       opacity: 0%;
       height: 100vh;
       width: 30vw;
-      top: 0px
+      top: 0px;
+      -webkit-tap-highlight-color:transparent;
     }
     #prev{
         left: 0px;
