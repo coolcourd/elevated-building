@@ -1,3 +1,4 @@
+let imageIndex = 1
 const target = document.getElementById("gallery")
 const images = [
     "/wp-content/uploads/2019/01/ISyzlcj01634x81000000000-650x406.jpg",
@@ -72,7 +73,7 @@ lb.style.display = "none";
 images.forEach((e,i)=> {
     target.innerHTML += `
 <div class="p-3">
-<img onClick="lightbox(${i})"
+<img class="galimg" onClick="lightbox(${i})"
     src="${e}">
 </img>
 </div>
@@ -89,10 +90,33 @@ const closeLb = () => {
 
 const setLbSrc = (index) => {
     lbImg.src = images[index]
+    imageIndex = index
+}
+
+const next = () => {
+    let nextImage = imageIndex+1
+    if (nextImage > images.length) {
+        nextImage = 0
+    }
+    setLbSrc(nextImage)
+}
+
+const prev = () => {
+    let previous = imageIndex-1
+    if (previous < 0) {
+        previous = images.length-1
+    }
+    setLbSrc(previous)
 }
 
 document.addEventListener("keydown", (e) => {
     if(e.key === "Escape") {
         closeLb()
+    }
+    if(e.key === "ArrowRight" && lb.style.display === "block") {
+        next()
+    }
+    if(e.key === "ArrowLeft" && lb.style.display === "block") {
+        prev()
     }
 })
