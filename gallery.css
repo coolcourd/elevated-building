@@ -1,0 +1,56 @@
+#lb-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(51, 51, 51, 0.95);
+    z-index: 100; 
+}
+
+#lb-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    /* margin: auto;
+    margin-top: 20%; */
+}
+
+div#close{
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    top: 80px;
+    left: 80px;
+}
+
+
+div#prev{
+    color: white;
+    font-size: 80px;
+    position: fixed;
+    top: 47%;
+    left: 30px;
+}
+
+div#next{
+    color: white;
+    font-size: 80px;
+    position: fixed;
+    top: 47%;
+    right: 30px;
+}
+
+div#prev:hover, div#next:hover {
+    font-size: 85px;
+    cursor: pointer;
+}
+
+div#close:hover {
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.galimg:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
