@@ -156,7 +156,7 @@ const setLbSrc = (index) => {
 
 const next = () => {
     let nextImage = imageIndex+1
-    if (nextImage > images.length) {
+    if (nextImage >= images.length) {
         nextImage = 0
     }
     setLbSrc(nextImage)

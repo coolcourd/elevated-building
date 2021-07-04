@@ -24,7 +24,7 @@ div#close{
 }
 
 
-div#prev{
+#prev{
     color: white;
     font-size: 80px;
     position: fixed;
@@ -32,13 +32,19 @@ div#prev{
     left: 30px;
 }
 
-div#next{
+#next{
     color: white;
     font-size: 80px;
     position: fixed;
     top: 47%;
     right: 30px;
 }
+
+@media screen and (max-width: 800px) {
+    #prev, #next {
+      opacity: 0%;
+    }
+  }
 
 div#prev:hover, div#next:hover {
     font-size: 85px;
