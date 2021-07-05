@@ -45,7 +45,8 @@ div#close{
       height: 100vh;
       width: 30vw;
       top: 0px;
-      -webkit-tap-highlight-color:transparent;
+      outline-style: none;
+      -webkit-tap-highlight-color: transparent;
     }
     #prev{
         left: 0px;
