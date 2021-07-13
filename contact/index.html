@@ -345,8 +345,9 @@ input[type="text"], input[type="email"], textarea{
         document.querySelector('#my-form').addEventListener('submit', (e) => {
             e.preventDefault()
             const data = {}
+	    window.test=e
             for(i=0; i<e.target.children.length; i++) {
-                if (e.target.children[i].type !== 'submit' && e.target.children[i].value) {
+                if (e.target.children[i].type !== 'submit') {
                 data[e.target.children[i].name] = e.target.children[i].value
                 }
             }
