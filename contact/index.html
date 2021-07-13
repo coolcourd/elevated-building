@@ -160,28 +160,8 @@ var beGdprConcerns = {"youtube":{"label":"Youtube","description":"Consent to dis
 <h4>How can we help?</h4>
 </div></div>
 <div class="tatsu-empty-space  tatsu-fqp90r4rgc8wuev0  "><style>.tatsu-fqp90r4rgc8wuev0.tatsu-empty-space{height: 30px;}</style></div>
-<!-- <form
-  action="https://formspree.io/f/xjvjojbq"
-  method="POST"
-  id="contactform"
->
-  <label>
-    Your name:
-    <input type="text" name="name">
-  </label>
-  <label>
-    Your email:
-    <input type="email" name="_replyto">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
 
-  <button type="submit">Submit</button>
-</form> -->
-
-<form id="my-form" action="https://formspree.io/f/xjvjojbq" method="POST">
+<form id="my-form" method="POST">
 	<label>
 		Your name:
 		<input type="text" name="name">
@@ -194,7 +174,7 @@ var beGdprConcerns = {"youtube":{"label":"Youtube","description":"Consent to dis
 		Your message:
 		<textarea name="message"></textarea>
 	  </label>
-	<button id="my-form-button">Submit</button>
+	<input type="submit" value='Submit'>
 	<p id="my-form-status"></p>
   </form>
 
@@ -361,6 +341,21 @@ input[type="text"], input[type="email"], textarea{
 		        </div>
 
 		    </div>
+    <script>
+        document.querySelector('#my-form').addEventListener('submit', (e) => {
+            e.preventDefault()
+            const data = {}
+            for(i=0; i<e.target.children.length; i++) {
+                if (e.target.children[i].type !== 'submit' && e.target.children[i].value) {
+                data[e.target.children[i].name] = e.target.children[i].value
+                }
+            }
+            fetch('https://courd-playground.000webhostapp.com/', {
+                method: "post",
+                body: JSON.stringify(data)
+            })
+        })
+    </script>
 <script type="text/javascript" src="/wp-includes/js/comment-reply.min.js?ver=5.7.2" id="comment-reply-js"></script>
 <script type="text/javascript" src="/wp-content/plugins/be-gdpr/public/js/magnificpopup.min.js?ver%5B0%5D=jquery" id="gdprmagnificpopup-js"></script>
 <script type="text/javascript" src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4" id="wp-polyfill-js"></script>
