@@ -354,7 +354,7 @@ input[type="text"], input[type="email"], textarea{
                 method: "post",
                 body: JSON.stringify(data)
             }).then(() => {
-	    	document.queryGetElementById('my-form-status').innerHTML = 'We got your submisison!'
+	    	document.getElementById('my-form-status').innerHTML = 'We got your submisison!'
 		for(i=0; i<dataElements.length; i++) {
                     dataElements[i].value = '';
             	}
