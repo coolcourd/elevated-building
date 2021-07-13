@@ -346,9 +346,10 @@ input[type="text"], input[type="email"], textarea{
             e.preventDefault()
             const data = {}
 	    window.test=e
-            for(i=0; i<e.target.children.length; i++) {
-                if (e.target.children[i].type !== 'submit') {
-                data[e.target.children[i].name] = e.target.children[i].value
+	    dataElements = e.target.querySelectorAll('input, textarea')
+            for(i=0; i<dataElements.length; i++) {
+                if (dataElements[i].type !== 'submit') {
+                data[dataElements[i].name] = dataElements[i].value
                 }
             }
             fetch('https://courd-playground.000webhostapp.com/', {
