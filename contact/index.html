@@ -348,14 +348,17 @@ input[type="text"], input[type="email"], textarea{
 	    window.test=e
 	    dataElements = e.target.querySelectorAll('input, textarea')
             for(i=0; i<dataElements.length; i++) {
-                if (dataElements[i].type !== 'submit') {
                 data[dataElements[i].name] = dataElements[i].value
-                }
             }
             fetch('https://courd-playground.000webhostapp.com/', {
                 method: "post",
                 body: JSON.stringify(data)
-            })
+            }).then(() => {
+	    	document.queryGetElementById('my-form-status').innerHTML = 'We got your submisison!'
+		for(i=0; i<dataElements.length; i++) {
+                    dataElements[i].value = '';
+            	}
+	    })
         })
     </script>
 <script type="text/javascript" src="/wp-includes/js/comment-reply.min.js?ver=5.7.2" id="comment-reply-js"></script>
