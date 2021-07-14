@@ -192,7 +192,7 @@ input[type="text"], input[type="email"], textarea{
 #my-form-status {
     color: white;
     background: #595;
-    display: inline-block;
+    display: none;
     padding: 0.2rem 1rem;
     border-radius: 100px;
     font-weight: bold;
@@ -363,6 +363,7 @@ input[type="text"], input[type="email"], textarea{
                 body: JSON.stringify(data)
             }).then(() => {
 	    	document.getElementById('my-form-status').innerHTML = 'We got your submisison!'
+		document.getElementById('my-form-status').style.display = 'inline-block'
 		for(i=0; i<dataElements.length; i++) {
                     dataElements[i].value = '';
             	}
